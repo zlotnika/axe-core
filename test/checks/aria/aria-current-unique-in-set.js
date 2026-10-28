@@ -178,15 +178,38 @@ describe('aria-current-unique-in-set', () => {
     assert.equal(checkContext._data.token, 'true');
   });
 
-  it('treats elements outside any set as one set', () => {
+  it('treats siblings outside any set as one set', () => {
     const params = checkSetup(html`
       <div>
-        <a id="target" href="/a" aria-current="page">A</a>
-        <a href="/b" aria-current="page">B</a>
+        <span
+          id="target"
+          aria-current="true"
+          aria-label="Slide 1"
+          tabindex="0"
+        ></span>
+        <span aria-current="true" aria-label="Slide 2" tabindex="0"></span>
       </div>
     `);
     assert.isTrue(checkEvaluate.apply(checkContext, params));
-    assert.equal(checkContext._data.role, 'page');
+    assert.equal(checkContext._data.role, 'parent element');
+  });
+
+  it('does not compare elements outside any set that are not siblings', () => {
+    const params = checkSetup(html`
+      <div>
+        <div>
+          <button id="target" aria-current="true">White</button>
+          <button aria-current="false">Black</button>
+        </div>
+        <div>
+          <button aria-current="true">Navy</button>
+          <button aria-current="false">Black</button>
+        </div>
+        <header><a href="/" aria-current="page">Logo</a></header>
+        <footer><a href="/" aria-current="page">Home</a></footer>
+      </div>
+    `);
+    assert.isFalse(checkEvaluate.apply(checkContext, params));
   });
 
   it('skips a presentational list for the enclosing set', () => {
