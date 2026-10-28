@@ -1,0 +1,14 @@
+{
+  "id": "aria-current-unique-in-set",
+  "impact": "moderate",
+  "selector": "[aria-current]",
+  "matches": "aria-current-unique-in-set-matches",
+  "tags": ["cat.aria", "best-practice", "experimental"],
+  "metadata": {
+    "description": "Ensure only one element in a set of elements is marked as current with aria-current",
+    "help": "Only one element in a set should be marked as current"
+  },
+  "all": [],
+  "any": [],
+  "none": ["aria-current-unique-in-set"]
+}

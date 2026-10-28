@@ -1,0 +1,52 @@
+<nav>
+  <ul>
+    <li><a id="pass1" href="/home" aria-current="page">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li>
+      <a id="pass2" href="/docs" aria-current="true">Docs</a>
+      <ul>
+        <li><a id="pass3" href="/docs/intro" aria-current="page">Intro</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<ul>
+  <li><a id="pass4" href="/home" aria-current="page">Home</a></li>
+  <li><a id="pass5" href="/home" aria-current="PAGE">Home</a></li>
+</ul>
+
+<ol>
+  <li><a id="pass6" href="/one" aria-current="step">One</a></li>
+  <li><a id="pass7" href="/two" aria-current="location">Two</a></li>
+  <li><a href="/three" aria-current="false">Three</a></li>
+  <li><a href="/four" aria-current="">Four</a></li>
+</ol>
+
+<ul>
+  <li><a id="pass8" href="/x" aria-current="page">X</a></li>
+  <li><a href="/y" aria-current="page" style="display: none">Y</a></li>
+</ul>
+
+<table>
+  <tr>
+    <td><a id="fail1" href="?edit=1" aria-current="page">Ann</a></td>
+  </tr>
+  <tr>
+    <td><a id="fail2" href="?edit=2" aria-current="page">Bob</a></td>
+  </tr>
+</table>
+
+<div role="toolbar">
+  <button id="fail3" aria-current="true">Bold</button>
+  <button id="fail4" aria-current="yes">Italic</button>
+</div>
+
+<ul role="menu">
+  <li role="none">
+    <a id="fail5" role="menuitem" href="/a" aria-current="page">A</a>
+  </li>
+  <li role="none">
+    <a id="fail6" role="menuitem" href="/a" aria-current="page">Also A</a>
+  </li>
+</ul>

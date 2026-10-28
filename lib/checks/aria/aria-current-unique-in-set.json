@@ -1,0 +1,14 @@
+{
+  "id": "aria-current-unique-in-set",
+  "evaluate": "aria-current-unique-in-set-evaluate",
+  "options": {
+    "anyToken": false
+  },
+  "metadata": {
+    "impact": "moderate",
+    "messages": {
+      "pass": "No other element in the same ${data.role} is marked aria-current=\"${data.token}\"",
+      "fail": "Another element in the same ${data.role} is marked aria-current=\"${data.token}\" with a different name or destination"
+    }
+  }
+}

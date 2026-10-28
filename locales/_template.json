@@ -29,6 +29,10 @@
       "description": "Ensure ARIA attributes are used as described in the specification of the element's role",
       "help": "ARIA attributes must be used as specified for the element's role"
     },
+    "aria-current-unique-in-set": {
+      "description": "Ensure only one element in a set of elements is marked as current with aria-current",
+      "help": "Only one element in a set should be marked as current"
+    },
     "aria-deprecated-role": {
       "description": "Ensure elements do not use deprecated roles",
       "help": "Deprecated ARIA roles must not be used"
@@ -472,6 +476,10 @@
         "rowSingular": "This attribute is supported with treegrid rows, but not ${data.ownerRole}: ${data.invalidAttrs}",
         "rowPlural": "These attributes are supported with treegrid rows, but not ${data.ownerRole}: ${data.invalidAttrs}"
       }
+    },
+    "aria-current-unique-in-set": {
+      "pass": "No other element in the same ${data.role} is marked aria-current=\"${data.token}\"",
+      "fail": "Another element in the same ${data.role} is marked aria-current=\"${data.token}\" with a different name or destination"
     },
     "aria-errormessage": {
       "pass": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique",
